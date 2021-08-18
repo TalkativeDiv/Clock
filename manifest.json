@@ -3,7 +3,7 @@
      "short_name": "Clock",
      "start_url": "/",
      "display": "standalone",
-     "theme_color":"rgba(99, 253, 136, 1)",
+     "theme_color":"#63fd88",
      "background_color": "#12181B",
      "description": "Cool clock i guess",
      "icons":[

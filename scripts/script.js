@@ -19,31 +19,33 @@ let formatTime = (time) => {
  }
 
 
-let setAlarmTime = (val) => {
-     alarmTime=val
-};
-let setAlarm = () =>{
-     if(alarmTime){
-          const current = new Date();
-          const timeToAlarm = new Date(alarmTime);
-          lblState.innerText = "Alarm Set"
+
+ let setAlarmTime = (value) => {
+     alarmTime = value;
+ }
+ 
+ let setAlarm = () => {
+     if(alarmTime) {
+         const current = new Date();
+         const timeToAlarm = new Date(alarmTime);
+ 
+         if (timeToAlarm > current) {
+             const timeout = timeToAlarm.getTime() - current.getTime();
+             alarmTimeout = setTimeout(() => audio.play(), timeout);
+             lblState.innerText = "Alarm Set"
           setTimeout(() => lblState.innerText = "", 1000)
-          if(alarmTime > current){
-               const timeout = timeToAlarm.getTime();
-               alarmTime = setTimeout(() => audio.play, timeout);
-          }
+         }
      }
-}
-
-
-let clearAlarm = () =>{
+ }
+ 
+ let clearAlarm = () => {
      audio.pause();
-     lblState.innerText = "Alarm Cleared"
-     setTimeout(() => lblState.innerText = "", 1000)
-     if(alarmTimeout){
-      clearTimeout(alarmTimeout);
+     if (alarmTimeout) {
+         clearTimeout(alarmTimeout);
+         lblState.innerText = 'Alarm cleared'
+        setTimeout(() => lblState.innerText = "", 1000)
      }
-}
+ }
 
 setInterval(updateTime, 1000);
 document.addEventListener('DOMContentLoaded', updateTime());

@@ -4,13 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="rgba(99, 253, 136, 1)">
+    <meta name="theme-color" content="#63fd88">
     <meta name="description" content="Cool Clock i guess"/>
     <meta name="author" content="TalkativeDiv">
     <title>Clock</title>
-    <link rel="shortcut icon" href="./logo.png" type="image/x-icon">
-    <link rel="stylesheet" href="./styles.css" />
-<link rel="apple-touch-icon" href="icons/apple-icon-180.png">
+    <link rel="shortcut icon" href="./assets/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/styles.css" />
+<link rel="apple-touch-icon" href="./icons/apple-icon-180.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <link rel="apple-touch-startup-image" href="icons/apple-splash-2048-2732.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)">
 <link rel="apple-touch-startup-image" href="icons/apple-splash-2732-2048.jpg" media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)">
@@ -43,7 +43,11 @@
   <body>
     <main class="container">
       <div id="clock"></div>
-      <input type="datetime-local" onchange="setAlarmTime(this.value)" name="alarmTime" />
+      <label for="Alarm Time">
+        <p>Alarm Time</p>
+        <br>
+        <input type="datetime-local" onchange="setAlarmTime(this.value)" name="alarmTime" />
+      </label>
       <div class="controls">
         <button class="btn setAlarm" onclick="setAlarm()">Set Alarm</button>
         <button class="btn clearAlarm" onclick="clearAlarm()">Clear Alarm</button>
@@ -60,6 +64,6 @@
       }
       </script>
     <script src="https://kit.fontawesome.com/861898755b.js" async defer crossorigin="anonymous"></script>
-    <script src="./script.js" async defer></script>
+    <script src="./scripts/script.js" async defer></script>
   </body>
 </html>
