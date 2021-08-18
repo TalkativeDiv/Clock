@@ -11,12 +11,12 @@ const OFFLINE_URL = "offline.html";
 
 const filesToCache = [
      '/',
-     './clock.svg',
+     './assets/clock.svg',
      './icons/',
      './index.html',
-     './script.js',
-     './styles.css',
-     './logo.png'
+     './styles/styles.css',
+     './scripts/script.js',
+     './assets/logo.png'
 
    ];
    
